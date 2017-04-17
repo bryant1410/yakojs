@@ -1,7 +1,7 @@
-#Yako's next version graphing api (draft)
+# Yako's next version graphing api (draft)
 Building upon v0.3.X experiences and feedbacks.
 
-##Usage
+## Usage
 Simplifying the entry point and consumable entry points.  To define a graph in a chart, simpily include the chart prefix as your key and its data set into the mix.  The avaliable charts are listed below.
 
 ```javascript
@@ -38,7 +38,7 @@ yako({
 })
 ```
 
-##Spark
+## Spark
 Spark is designed for simple trivial graph, and works with a simple set of data.
 
 ```javascript
@@ -60,7 +60,7 @@ spark: [
 ]
 ```
 
-##Bubble
+## Bubble
 Bubble graph, best for representing a cohort of sample size
 
 ```javascript

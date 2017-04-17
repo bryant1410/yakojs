@@ -17,7 +17,7 @@ Demo [http://github.alfredkam.com/yakojs](http://github.alfredkam.com/yakojs) or
 
 Supports Chrome, Firefox, Safari, and IE 9+;
 
-###Note on upgrading 0.4.X to 0.5.X
+### Note on upgrading 0.4.X to 0.5.X
 - Deprecate the old bubble usage and with a new interface
 - Simplify ```<graph>.timeseries``` require usage - It is now no longer needed to include ```.timeseries``` to use those graphs
 - Simplify chart configuration by flattern out ```<graph>.attr({})```

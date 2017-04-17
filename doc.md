@@ -1,4 +1,4 @@
-##Content
+## Content
 - [General Usage](#Usage)
   - [Spark Graph Attributes](#spark-graph-attributes)
   - [Line Graph Attributes](#line-graph-attributes)
@@ -24,7 +24,7 @@
 
 [External Link: Visual Examples](http://alfredkam.com/yakojs/example.html)
 
-##General Usage
+## General Usage
 To use any of the graphs you could access them through these entry points.
 ``` javascript
 var yako = require('yako');                // or window.yako on the browser
@@ -37,7 +37,7 @@ var line = yako.line;                      // Line graph
 var pie = yako.pie;                        // Pie chart
 ```
 
-####Initializing
+#### Initializing
 <i>graph</i>().attr(<i>attributes</i>) <br>
 &nbsp;&nbsp; => returns a string ```<svg>...</svg>``` <br>
 <i>graph</i>("#graph").attr(<i>attributes</i>) <br>
@@ -45,7 +45,7 @@ var pie = yako.pie;                        // Pie chart
 <i>graph</i>(".graph").attr(<i>attributes</i>) <br>
 &nbsp;&nbsp; => returns a string ```<div class='graph'><svg>...</svg></div>```<br>
 
-####Spark Graph Attributes
+#### Spark Graph Attributes
 ```javascript
 var set = [
   {
@@ -106,7 +106,7 @@ spark().attr({
 });
 ```
 
-####Line Graph Attributes
+#### Line Graph Attributes
 Line graph - a spark graph with labels support
 
 ```javascript
@@ -178,7 +178,7 @@ line().attr({
   points: dataSet
 });
 ```
-####Pie Chart Attributes
+#### Pie Chart Attributes
 ```javascript
 var set = [123,1233,1231,123];      // An array of numbers
 pie('.graph').attr({
@@ -202,7 +202,7 @@ pie('.graph').attr({
 });
 ```
 
-####Donut Chart Attributes
+#### Donut Chart Attributes
 ```javascript
 var set = [];                           // An array of numbers
 donut('.graph').attr({
@@ -233,7 +233,7 @@ var outerRadius = chart.outerRadius || (circumference / 2);
 var innerRadius = chart.innerRadius || (outerRadius / 2);
 ```
 
-####Bar Graph Attributes
+#### Bar Graph Attributes
 ```javascript
 var set = [
   {
@@ -254,7 +254,7 @@ bar('.graph').attr({
   points: set
 });
 ```
-####Bubble Graph Attributes
+#### Bubble Graph Attributes
 A bubble graph, best use to represnet a cohort's sample size and consumes a data object
 
 ```javascript
@@ -291,7 +291,7 @@ bubbleScatter().attr({
 });
 ```
 
-####Bubble Point (Bubble Line) Attributes
+#### Bubble Point (Bubble Line) Attributes
 A time series graph and uses bubble to represent a sample size happening a cross a series.
 ```javascript
 var bubblePoint = requrie('yako').bubble.point
@@ -332,7 +332,7 @@ bubblePoint().attr({
 
 ```
 
-##API & Mixin
+## API & Mixin
 Instances of the graph component are created internally, and each component could be re-used subsequently.  Once you've picked your entry point, you could access the component api. Within each component, you could access your component with ```javascript this```
 ```javascript
 /* Example */
@@ -354,10 +354,10 @@ var result = instance.attr({
 })
 ```
 
-#####mixin: [{...}]
+##### mixin: [{...}]
 Sometimes common components / functions may share some common functionality with other graph components.  Mixin allows you to enable the magic to happen.
 
-#####make(tagName, attribute, dataAttribute)
+##### make(tagName, attribute, dataAttribute)
 ```make``` is called everytime to create a svg element with the provided attributes and data attributes, and expects to return a string or object that ```append``` function can consume.
 
 The super class of ```make``` is referenced [here](https://github.com/alfredkam/yakojs/blob/d5ef0c5072d8b952e66929c5bc9a5f40171b6e1b/lib/base/common.js#L41-L52)
@@ -365,7 +365,7 @@ The super class of ```make``` is referenced [here](https://github.com/alfredkam/
 #####append(parent, childs)
 ```append``` is called everytime to append the childs into the parent element. ```childs``` is the result of an array of ```make``` and ```parent``` is either empty or a result of a ```make``` function call to create the parent element.  It expects to return a string or object.
 
-#####preRender(immutableScale) [Beta]
+##### preRender(immutableScale) [Beta]
 Expects an array of svg elements in string format, unless the ```make``` and ```append``` format is changed up by you.
 ```javascript
 return {
@@ -386,7 +386,7 @@ return {
 
 The super class of ```append``` is referenced [here](https://github.com/alfredkam/yakojs/blob/d5ef0c5072d8b952e66929c5bc9a5f40171b6e1b/lib/base/common.js#L31-L39)
 
-#####postRender(result)
+##### postRender(result)
 ```render``` provides the result of the component, you could intercept the result before it passes back up to the chain
 
 ##SVG API
